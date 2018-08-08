@@ -8,4 +8,5 @@
 # .tfvars files
 *.tfvars
 
+.DS_Store
 key.pub
