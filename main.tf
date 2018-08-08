@@ -2,6 +2,18 @@ provider "aws" {
   region = "us-east-1"
 }
 
+module "global" {
+  source = "global"
+}
+
 module "prod" {
-  source = "prod"
+  source            = "prod"
+  base_cidr_block   = "${var.prod_base_cidr_block}"
+  main_ssh_key_name = "${module.global.main_ssh_key_name}"
+}
+
+module "stage" {
+  source            = "stage"
+  base_cidr_block   = "${var.stage_base_cidr_block}"
+  main_ssh_key_name = "${module.global.main_ssh_key_name}"
 }
