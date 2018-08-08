@@ -1,4 +1,6 @@
 variable "vpc_id" {}
+variable "name" {}
+variable "environment_prefix" {}
 
 variable "gateway_id" {}
 

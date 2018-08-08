@@ -7,7 +7,7 @@ resource "aws_instance" "skyhawk_website" {
   vpc_security_group_ids = ["${var.security_groups}"]
 
   tags {
-    Name = "skyhawk-website"
+    Name = "${var.environment_prefix}-skyhawk-website"
   }
 
   lifecycle {

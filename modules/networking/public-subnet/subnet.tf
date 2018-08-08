@@ -5,6 +5,9 @@ resource "aws_subnet" "main" {
   map_public_ip_on_launch = true
 
   # assign_ipv6_address_on_creation = true
+  tags {
+    Name = "${var.environment_prefix}-${var.name}"
+  }
 }
 
 resource "aws_route_table" "main" {
@@ -18,6 +21,10 @@ resource "aws_route_table" "main" {
   route {
     ipv6_cidr_block = "::/0"
     gateway_id      = "${var.gateway_id}"
+  }
+
+  tags {
+    Name = "${var.environment_prefix}-main"
   }
 }
 

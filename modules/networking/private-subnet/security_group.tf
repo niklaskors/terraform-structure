@@ -9,4 +9,8 @@ resource "aws_security_group" "az" {
     protocol    = -1
     cidr_blocks = ["${aws_subnet.main.cidr_block}"]
   }
+
+  tags {
+    Name = "${var.environment_prefix}-az"
+  }
 }

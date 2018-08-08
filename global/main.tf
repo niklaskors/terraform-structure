@@ -1,3 +1,3 @@
 module "ssh" {
-  source = "../modules/ssh"
+  source = "ssh"
 }

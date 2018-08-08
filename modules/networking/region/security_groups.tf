@@ -7,6 +7,10 @@ resource "aws_default_security_group" "default" {
     from_port = 0
     to_port   = 0
   }
+
+  tags {
+    Name = "${var.environment_prefix}-default"
+  }
 }
 
 resource "aws_security_group" "region" {
@@ -19,6 +23,10 @@ resource "aws_security_group" "region" {
     to_port     = 0
     protocol    = -1
     cidr_blocks = ["${aws_vpc.main.cidr_block}"]
+  }
+
+  tags {
+    Name = "${var.environment_prefix}-region"
   }
 }
 
@@ -33,6 +41,10 @@ resource "aws_security_group" "internal-all" {
     protocol    = -1
     cidr_blocks = ["${var.base_cidr_block}"]
   }
+
+  tags {
+    Name = "${var.environment_prefix}-internal-all"
+  }
 }
 
 resource "aws_security_group" "ssh" {
@@ -46,5 +58,9 @@ resource "aws_security_group" "ssh" {
     protocol         = 6
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
+  }
+
+  tags {
+    Name = "${var.environment_prefix}-ssh"
   }
 }

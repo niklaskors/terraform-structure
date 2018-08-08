@@ -12,3 +12,5 @@ variable "region_numbers" {
 }
 
 variable "base_cidr_block" {}
+
+variable "environment_prefix" {}

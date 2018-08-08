@@ -2,12 +2,12 @@ output "vpc_id" {
   value = "${aws_vpc.main.id}"
 }
 
-output "primary_subnet_id" {
-  value = "${module.primary_subnet.subnet_id}"
+output "public_subnet_id" {
+  value = "${module.public_subnet.subnet_id}"
 }
 
-output "secondary_subnet_id" {
-  value = "${module.secondary_subnet.subnet_id}"
+output "private_subnet_id" {
+  value = "${module.private_subnet.subnet_id}"
 }
 
 output "ssh_security_group_id" {
