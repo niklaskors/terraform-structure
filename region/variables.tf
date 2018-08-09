@@ -1,5 +1,7 @@
 variable "base_cidr_block" {}
 
-variable "main_ssh_key_name" {}
-
 variable "environment_prefix" {}
+
+variable "region" {}
+
+variable "default_ami" {}

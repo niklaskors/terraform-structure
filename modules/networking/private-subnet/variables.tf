@@ -1,6 +1,9 @@
+variable "region" {}
+
 variable "vpc_id" {}
 
 variable "name" {}
+
 variable "environment_prefix" {}
 
 variable "availability_zone" {}

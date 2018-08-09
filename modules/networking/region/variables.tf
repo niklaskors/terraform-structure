@@ -1,6 +1,4 @@
-variable "region" {
-  description = "The name of the AWS region to set up a network within"
-}
+variable "region" {}
 
 variable "region_numbers" {
   default = {

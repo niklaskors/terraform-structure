@@ -10,6 +10,7 @@ resource "aws_internet_gateway" "main" {
 
 module "public_subnet" {
   source             = "../public-subnet"
+  region             = "${var.region}"
   name               = "public"
   environment_prefix = "${var.environment_prefix}"
   vpc_id             = "${aws_vpc.main.id}"
@@ -19,6 +20,7 @@ module "public_subnet" {
 
 module "private_subnet" {
   source             = "../private-subnet"
+  region             = "${var.region}"
   name               = "private"
   environment_prefix = "${var.environment_prefix}"
   vpc_id             = "${aws_vpc.main.id}"
